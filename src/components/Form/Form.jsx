@@ -9,15 +9,20 @@ const Form = () => {
         country: '',
         message: '',
         phone: '',
-        errors: []
+        errors: [],
+        errMes: ""
     })
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
         if (formData.name.length == 0) {
-            alert("Tiene que poner su nombre")
+            //alert("Tiene que poner su nombre")
             formData.errors.push("name")
+            setFormData({
+                ...formData,
+                errMes: "Hay un error en el formulario" 
+            })
         }
 
         if (formData.errors.length == 0) {
@@ -42,6 +47,7 @@ const Form = () => {
 
     return (
         <div className="Form">
+            <p>{formData.errMes}</p>
             <form>
                 <div>
                     <label> Nombre
