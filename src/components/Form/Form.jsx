@@ -1,6 +1,8 @@
 import { useState } from 'react'
 //import { myAPIService } from '../../services/myAPIService.js'
 
+import FormButton from '../FormButton/FormButton'
+
 const Form = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -80,7 +82,7 @@ const Form = () => {
                     </label>
                 </div>
                 <div>
-                    <input type="submit" value="Submit" onClick={handleSubmit} />
+                    <FormButton value="Enviar" handle={handleSubmit} />
                 </div>
             </form>
         </div>
